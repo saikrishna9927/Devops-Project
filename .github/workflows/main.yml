@@ -1,0 +1,23 @@
+yamlname: My First Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Print Hello
+        run: echo "Hello from EC2 Runner!"
+
+      - name: Check OS
+        run: uname -a
+
+      - name: List files
+        run: ls -la
